@@ -4,30 +4,30 @@ import { useState } from 'react';
 
 import randomColor from 'randomcolor';
 
-export default function rdnColor() {
-  const [color, setColor] = useState(randomColor());
-
-  function generateRandomColor (event) {
-    setColor = randomColor();
-  }
-
+function App() {
+  const rdnColor = randomColor();
+  const [color, setColor] = useState('hi');
+ 
   return <div>
 
-  <h1>Random Color Generator</h1>
-  <div style = {{
+    <h1>Random Color Generator</h1>
+    <div style = {{
     width: 300,
     height: 300,
     margin: '0 auto',
-    border: '1 px solid green',
+    border: '1px solid black',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 60,
   }}
   >
-    ---
+    {color}
   </div>
-  <button onchange = {generateRandomColor}>Generate</button>
+  <br></br>
+  <button onClick ={ () => {
+    setColor(rdnColor)
+    } }>Generate</button>
 
   </div>
 }
