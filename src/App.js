@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useState } from 'react';
+
+import randomColor from 'randomcolor';
+
+export default function rdnColor() {
+  const [color, setColor] = useState(randomColor());
+
+  function generateRandomColor (event) {
+    setColor = randomColor();
+  }
+
+  return <div>
+
+  <h1>Random Color Generator</h1>
+  <div style = {{
+    width: 300,
+    height: 300,
+    margin: '0 auto',
+    border: '1 px solid green',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 60,
+  }}
+  >
+    ---
+  </div>
+  <button onchange = {generateRandomColor}>Generate</button>
+
+  </div>
 }
 
 export default App;
