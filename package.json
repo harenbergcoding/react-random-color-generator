@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/randomcolor": "^0.5.6",
     "randomcolor": "^0.6.2",
@@ -43,6 +42,7 @@
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "@typescript-eslint/eslint-plugin": "5.36.2",
     "@typescript-eslint/parser": "5.36.2",
     "@upleveled/eslint-config-upleveled": "2.12.7",

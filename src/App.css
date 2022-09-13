@@ -3,7 +3,5 @@ div {
 }
 
 .colorBox {
-  transition: background-color 2.0s ease;
-  }
-
-
+  transition: background-color 2s ease;
+}
