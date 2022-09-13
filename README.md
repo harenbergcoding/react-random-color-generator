@@ -1,3 +1,7 @@
+Cerate random color clicking the button
+
+Input color and luminosity to influence random color generated
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
