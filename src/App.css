@@ -1,3 +1,9 @@
 div {
   text-align: center;
 }
+
+.colorBox {
+  transition: background-color 2.0s ease;
+  }
+
+

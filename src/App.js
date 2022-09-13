@@ -9,11 +9,13 @@ function App() {
   const [color, setColor] = useState('#FFFFFF'); // useState for randomColor
   const [colorName, setColorName] = useState(''); // useState for color inputs
   const [lumName, setlumName] = useState(''); // useState for color inputs
+  // const [width, setWidth] = useState('150'); // useState for color inputs
+  // const [height, setHeight] = useState('150'); // useState for color inputs
 
   return <div>
 
     <h1>Random Color Generator</h1>
-    <div style = {{
+    <div className ='colorBox' style = {{
     width: 350,
     height: 350,
     margin: '0 auto',
@@ -78,15 +80,19 @@ function App() {
     
     // update the state variable 
 
-    const colorChosen = randomColor({luminosity: event.currentTarget.value}); // randomColor equals color = user input
+    const lumChosen = randomColor({luminosity: event.currentTarget.value}); // randomColor equals color = user input
 
-     if (colorChosen){
-      setColor(colorChosen)
+     if (lumChosen){
+      setColor(lumChosen)
      }}
     } 
+
   />
 
-    </div>
+<br/>
+<br/>
+
+  </div>
   
 }
 
