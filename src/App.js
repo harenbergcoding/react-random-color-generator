@@ -6,7 +6,8 @@ import randomColor from 'randomcolor';
 
 function App() {
 
-  const [color, setColor] = useState('#FFFFFF');
+  const [color, setColor] = useState('#FFFFFF'); // useState for randomColor
+  const [colorName, setColorName] = useState(''); // useState for color inputs
  
   return <div>
 
@@ -19,7 +20,7 @@ function App() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: 50,
+    fontSize: 40,
     backgroundColor: color,
     borderRadius: '50%',
     
@@ -27,13 +28,41 @@ function App() {
   >
    Generated color: {color}
   </div>
-  <br></br>
+
+  <br/>
+  <br/>
+
   <button onClick ={ () => {
-    setColor(randomColor()) 
+    setColor(randomColor()) // change state to new color
   } }
   >Generate</button>
 
+  <br/>
+  <br/>
+
+{/* Controlled component */}
+<div>Input Color</div>
+  <input
+    // Use state variable 
+    value = {colorName} //value = empty
+
+    // define changehandler function
+
+    onChange = { (event) => {
+      setColorName(event.currentTarget.value); // set colorName to user input
+    
+    // update the state variable 
+
+    const colorChosen = randomColor({hue: event.currentTarget.value}); // randomColor equals color = user input
+
+     if (colorChosen){
+      setColor(colorChosen)
+     }}
+    } 
+  />
+
   </div>
+  
 }
 
 export default App;
