@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [color, setColor] = useState('#FFFFFF'); // useState for randomColor
   const [colorName, setColorName] = useState(''); // useState for color inputs
-  const [lumName, setlumName] = useState(''); // useState for color inputs
+  const [lumName, setLumName] = useState(''); // useState for luminosity inputs
   // const [width, setWidth] = useState('150'); // useState for color inputs
   // const [height, setHeight] = useState('150'); // useState for color inputs
 
@@ -48,7 +48,7 @@ function App() {
       <div>Input Color</div>
       <input
         // Use state variable
-        value={colorName} //value = empty
+        value={colorName} // cvalue = empty
         // define changehandler function
 
         onChange={(event) => {
@@ -71,11 +71,11 @@ function App() {
       <div>Input Luminosity</div>
       <input
         // Use state variable
-        value={lumName} //value = empty
+        value={lumName} // cvalue = empty
         // define changehandler function
 
         onChange={(event) => {
-          setlumName(event.currentTarget.value); // set lumName to user input
+          setLumName(event.currentTarget.value); // set lumName to user input
 
           // update the state variable
 
@@ -83,9 +83,7 @@ function App() {
             luminosity: event.currentTarget.value,
           }); // randomColor equals color = user input
 
-          if (lumChosen) {
-            setColor(lumChosen);
-          }
+          setColor(lumChosen);
         }}
       />
 
