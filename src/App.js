@@ -29,10 +29,8 @@ function App() {
       >
         Generated color: {color}
       </div>
-
       <br />
       <br />
-
       <button
         onClick={() => {
           setColor(randomColor()); // change state to new color
@@ -40,11 +38,9 @@ function App() {
       >
         Generate
       </button>
-
       <br />
       <br />
-
-      {/* Controlled component */}
+      {/* Controlled component */}npx serve -s build
       <div>Input Color</div>
       <input
         // Use state variable
@@ -63,10 +59,8 @@ function App() {
           }
         }}
       />
-
       <br />
       <br />
-
       {/* Controlled component */}
       <div>Input Luminosity</div>
       <input
@@ -83,10 +77,13 @@ function App() {
             luminosity: event.currentTarget.value,
           }); // randomColor equals color = user input
 
-          setColor(lumChosen);
+          if (lumChosen) {
+            setColor(lumChosen);
+          }
+
+          // setColor(lumChosen);
         }}
       />
-
       <br />
       <br />
     </div>
