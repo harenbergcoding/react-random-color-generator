@@ -10,7 +10,7 @@ function App() {
   // const [height, setHeight] = useState('150'); // useState for color inputs
 
   return (
-    <div>
+    <div id="app">
       <h1>Random Color Generator</h1>
       <div
         className="colorBox"
