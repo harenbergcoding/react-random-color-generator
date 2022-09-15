@@ -41,49 +41,52 @@ function App() {
       <br />
       <br />
       {/* Controlled component */}
-      <div>Input Color</div>
-      <input
-        // Use state variable
-        value={colorName} // cvalue = empty
-        // define changehandler function
+      <div>
+        Input Color
+        <br />
+        <input
+          // Use state variable
+          value={colorName} // cvalue = empty
+          // define changehandler function
 
-        onChange={(event) => {
-          setColorName(event.currentTarget.value); // set colorName to user input
+          onChange={(event) => {
+            setColorName(event.currentTarget.value); // set colorName to user input
 
-          // update the state variable
+            // update the state variable
 
-          const colorChosen = randomColor({ hue: event.currentTarget.value }); // randomColor equals color = user input
+            const colorChosen = randomColor({ hue: event.currentTarget.value }); // randomColor equals color = user input
 
-          if (colorChosen) {
-            setColor(colorChosen);
-          }
-        }}
-      />
-      <br />
-      <br />
-      {/* Controlled component */}
-      <div>Input Luminosity</div>
-      <input
-        // Use state variable
-        value={lumName} // cvalue = empty
-        // define changehandler function
+            if (colorChosen) {
+              setColor(colorChosen);
+            }
+          }}
+        />
+        <br />
+        <br />
+        {/* Controlled component */}
+        Input Luminosity
+        <br />
+        <input
+          // Use state variable
+          value={lumName} // cvalue = empty
+          // define changehandler function
 
-        onChange={(event) => {
-          setLumName(event.currentTarget.value); // set lumName to user input
+          onChange={(event) => {
+            setLumName(event.currentTarget.value); // set lumName to user input
 
-          // update the state variable
+            // update the state variable
 
-          const lumChosen = randomColor({
-            luminosity: event.currentTarget.value,
-          }); // randomColor equals color = user input
+            const lumChosen = randomColor({
+              luminosity: event.currentTarget.value,
+              hue: event.currentTarget.value,
+            }); // randomColor equals color = user input
 
-          if (lumChosen) {
-            setColor(lumChosen);
-          }
-
-          // setColor(lumChosen);
-        }}
-      />
+            if (lumChosen) {
+              setColor(lumChosen);
+            }
+          }}
+        />
+      </div>
       <br />
       <br />
     </div>
