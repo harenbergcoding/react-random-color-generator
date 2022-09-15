@@ -1,5 +1,3 @@
-export default reportWebVitals;
-
 const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals')
@@ -13,3 +11,5 @@ const reportWebVitals = (onPerfEntry) => {
       .catch((err) => console.log(err));
   }
 };
+
+export default reportWebVitals;

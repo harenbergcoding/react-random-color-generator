@@ -40,7 +40,7 @@ function App() {
       </button>
       <br />
       <br />
-      {/* Controlled component */}npx serve -s build
+      {/* Controlled component */}
       <div>Input Color</div>
       <input
         // Use state variable
