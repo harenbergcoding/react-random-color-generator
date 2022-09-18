@@ -27,7 +27,7 @@ function App() {
           borderRadius: '50%',
         }}
       >
-        <div>Generated color: {color}</div>
+        Generated color: {color}
       </div>
       <br />
       <br />
