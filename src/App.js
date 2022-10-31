@@ -3,7 +3,7 @@ import randomColor from 'randomcolor';
 import { useState } from 'react';
 
 export default function App() {
-  const [color, setColor] = useState('#FFFFFF'); // useState for randomColor
+  const [color, setColor] = useState('#FFFFFF'); // useState for randomColor, initial color is white
   const [colorName, setColorName] = useState(''); // useState for color inputs
   const [lumName, setLumName] = useState(''); // useState for luminosity inputs
 
@@ -28,7 +28,7 @@ export default function App() {
           marginBottom: 50,
         }}
       >
-        Generated color: {color}
+        Generated Color: {color}
       </div>
       <button
         style={{
@@ -61,14 +61,13 @@ export default function App() {
               // set colorName to user input
               setColorName(event.currentTarget.value);
 
+              // sets randomcolor to user input
               const colorChosen = randomColor({
                 hue: event.currentTarget.value,
-                format: 'rgb',
-              }); // randomColor equals color = user input
-              if (colorChosen) {
+              });
+
+              if (colorName) {
                 setColor(colorChosen);
-              } else {
-                randomColor('#FFFFFF'); // does not work
               }
             }}
           />
@@ -79,21 +78,16 @@ export default function App() {
           Input Luminosity <br />
           <input
             style={{ marginBottom: 20, borderRadius: 4 }}
-            // Use state variable
-            value={lumName} // cvalue = empty
-            // define changehandler function
-
+            value={lumName}
             onChange={(event) => {
-              setLumName(event.currentTarget.value); // set lumName to user input
+              setLumName(event.currentTarget.value);
 
-              // update the state variable
-
+              // sets luminosity to user input
               const lumChosen = randomColor({
                 luminosity: event.currentTarget.value,
-                hue: event.currentTarget.value,
-              }); // randomColor equals color = user input
+              });
 
-              if (lumChosen) {
+              if (lumName) {
                 setColor(lumChosen);
               }
             }}
