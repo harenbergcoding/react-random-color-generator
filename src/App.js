@@ -2,11 +2,11 @@ import './App.css';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 
-function App() {
+export default function App() {
   const [color, setColor] = useState('#FFFFFF'); // useState for randomColor
   const [colorName, setColorName] = useState(''); // useState for color inputs
   const [lumName, setLumName] = useState(''); // useState for luminosity inputs
-  // const [width, setWidth] = useState('150'); // useState for color inputs
+
   // const [height, setHeight] = useState('150'); // useState for color inputs
 
   return (
@@ -25,72 +25,81 @@ function App() {
           fontSize: 40,
           backgroundColor: color,
           borderRadius: '50%',
+          marginBottom: 50,
         }}
       >
         Generated color: {color}
       </div>
-      <br />
-      <br />
       <button
+        style={{
+          marginBottom: 20,
+          borderRadius: 4,
+          width: 170,
+          height: 25,
+          backgroundColor: 'lightseagreen',
+          color: 'white',
+          fontWeight: 'bold',
+        }}
         onClick={() => {
-          setColor(randomColor()); // change state to new color
+          // updates the state with new color
+          setColor(randomColor());
         }}
       >
         Generate
       </button>
-      <br />
-      <br />
+
       {/* Controlled component */}
       <div>
-        Input Color
-        <br />
-        <input
-          // Use state variable
-          value={colorName} // cvalue = empty
-          // define changehandler function
+        <label>
+          Input Color <br />
+          <input
+            style={{ marginBottom: 20, borderRadius: 4 }}
+            // initial value is empty
+            value={colorName}
+            // define changehandler function
+            onChange={(event) => {
+              // set colorName to user input
+              setColorName(event.currentTarget.value);
 
-          onChange={(event) => {
-            setColorName(event.currentTarget.value); // set colorName to user input
-
-            // update the state variable
-
-            const colorChosen = randomColor({ hue: event.currentTarget.value }); // randomColor equals color = user input
-
-            if (colorChosen) {
-              setColor(colorChosen);
-            }
-          }}
-        />
-        <br />
-        <br />
+              const colorChosen = randomColor({
+                hue: event.currentTarget.value,
+                format: 'rgb',
+              }); // randomColor equals color = user input
+              if (colorChosen) {
+                setColor(colorChosen);
+              } else {
+                randomColor('#FFFFFF'); // does not work
+              }
+            }}
+          />
+          <br />
+        </label>
         {/* Controlled component */}
-        Input Luminosity
-        <br />
-        <input
-          // Use state variable
-          value={lumName} // cvalue = empty
-          // define changehandler function
+        <label>
+          Input Luminosity <br />
+          <input
+            style={{ marginBottom: 20, borderRadius: 4 }}
+            // Use state variable
+            value={lumName} // cvalue = empty
+            // define changehandler function
 
-          onChange={(event) => {
-            setLumName(event.currentTarget.value); // set lumName to user input
+            onChange={(event) => {
+              setLumName(event.currentTarget.value); // set lumName to user input
 
-            // update the state variable
+              // update the state variable
 
-            const lumChosen = randomColor({
-              luminosity: event.currentTarget.value,
-              hue: event.currentTarget.value,
-            }); // randomColor equals color = user input
+              const lumChosen = randomColor({
+                luminosity: event.currentTarget.value,
+                hue: event.currentTarget.value,
+              }); // randomColor equals color = user input
 
-            if (lumChosen) {
-              setColor(lumChosen);
-            }
-          }}
-        />
+              if (lumChosen) {
+                setColor(lumChosen);
+              }
+            }}
+          />
+        </label>
       </div>
-      <br />
-      <br />
     </div>
   );
 }
-
-export default App;
