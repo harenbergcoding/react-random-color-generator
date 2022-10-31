@@ -1,4 +1,5 @@
 ## Random Color Generator
 
-Generates a color based on color or luminosity input.
+Generates a random color based on user's color or luminosity input.
+
 Technology: React
